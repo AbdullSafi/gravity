@@ -4,9 +4,10 @@ package dal.gravity;
 /**
  * Represents a pendulum on the planet Earth
  */
+
 public abstract class AbstractEarthPendulum extends AbstractPendulum {
 
-    /** gravitational constant */
+   /** gravitational constant */
     public static final double GRAVITY = 9.80665;
 
     /**
