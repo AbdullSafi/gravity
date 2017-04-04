@@ -1,13 +1,13 @@
 package dal.gravity;
 
-
+/*
 /**
  * Represents a pendulum on the planet Earth
  */
-public abstract class AbstractEarthPendulum extends AbstractPendulum {
+/*public abstract class AbstractEarthPendulum extends AbstractPendulum {
 
     /** gravitational constant */
-    public static final double GRAVITY = 9.80665;
+ /*   public static final double GRAVITY = 9.80665;
 
     /**
      * Creates a new Pendulum instance using
@@ -15,9 +15,9 @@ public abstract class AbstractEarthPendulum extends AbstractPendulum {
      * inMass: the point mass (>0)
      * inTheta0: angular displacement at t=0 (0<=theta0)
      */
-    public AbstractEarthPendulum (double inLength, double inMass, double inTheta0) {
+   /* public AbstractEarthPendulum (double inLength, double inMass, double inTheta0) {
 	super (inLength, inMass, inTheta0, GRAVITY);
     }
 
-}
+}*/
 

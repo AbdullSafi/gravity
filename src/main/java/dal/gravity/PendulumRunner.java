@@ -14,10 +14,10 @@ public class PendulumRunner {
 
 	double delta = (args.length == 0) ? .1 : Double.parseDouble (args[0]);
 	double sLen = 10, pMass = 10, theta0 = Math.PI/30;
-	RegularPendulum rp = new RegularPendulum (sLen, pMass, theta0, delta);
-	SimplePendulum sp = new SimplePendulum (sLen, pMass, theta0);
+	RegularPendulum rp = new RegularPendulum (sLen, pMass, theta0, delta, new GravityConstant(8.9));
+	SimplePendulum sp = new SimplePendulum (sLen, pMass, theta0, new GravityConstant(8.9));
 	RegularPendulum rpCoarse = 
-	    new RegularPendulum (sLen, pMass, theta0, .1);
+	    new RegularPendulum (sLen, pMass, theta0, .1, new GravityConstant(8.9));
 
 	// print out difference in displacement in 1 second intervals
 	// for 20 seconds
