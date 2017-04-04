@@ -7,7 +7,7 @@ public class RegularPendulum extends AbstractPendulum {
     private double delta, iterations = 0;
     private double dissipation;
     private double lastTheta, lastVel, lastAccel;
- //   private GravityConstant grField;
+ //   private GravityConstant gr;
 
     /**
      * Creates a new Pendulum instance 
