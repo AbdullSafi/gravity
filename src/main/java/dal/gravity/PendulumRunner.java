@@ -14,16 +14,24 @@ public class PendulumRunner {
 
 	double delta = (args.length == 0) ? .1 : Double.parseDouble (args[0]);
 	double sLen = 10, pMass = 10, theta0 = Math.PI/30;
-	RegularPendulum rp = new RegularPendulum (sLen, pMass, theta0, delta, new GravityConstant(8.9));
-	SimplePendulum sp = new SimplePendulum (sLen, pMass, theta0, new GravityConstant(8.9));
+	GravityConstant j = new GravityConstant(25);
+	GravityConstant e = new GravityConstant(8.9);
+	
+	RegularPendulum rp = new RegularPendulum (sLen, pMass, theta0, delta, e);
+	SimplePendulum sp = new SimplePendulum (sLen, pMass, theta0, e);
 	RegularPendulum rpCoarse = 
-	    new RegularPendulum (sLen, pMass, theta0, .1, new GravityConstant(8.9));
+	    new RegularPendulum (sLen, pMass, theta0, .1, e);
+	
 
 	// print out difference in displacement in 1 second intervals
 	// for 20 seconds
 	int iterations = (int) (1/delta);
 	System.out.println ("analytical vs. numerical displacement (fine, coarse)");
 	for (int second = 1; second <= 20; second++) {
+		if(second == 10)
+		{
+			e.setGravitionalField(j);
+		}
 	    for (int i = 0; i < iterations; i++) rp.step ();
 	    for (int i = 0; i < 10; i++) rpCoarse.step (); 
 	    System.out.println ("t=" + second + "s: \t" + 

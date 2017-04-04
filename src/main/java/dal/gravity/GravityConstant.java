@@ -9,6 +9,8 @@ public class GravityConstant implements GravityModel{
 		grConst = g ;
 	}
 	
-	public double getGravitionalField(){return grConst;}
+	public double getGravitionalField() {return grConst;}
+	
+	public void setGravitionalField(GravityConstant newGr) {grConst = newGr.getGravitionalField();}
 
 }
